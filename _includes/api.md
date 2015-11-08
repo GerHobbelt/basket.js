@@ -55,6 +55,18 @@ basket.require(
 
 Multiple scripts will be requested. `require.config.js` will not be cached in localStorage. Useful if order of scripts execution is important but storing certain script is not needed, e.g. it changes with each request.
 
+**Multiple scripts without caching some of them**
+
+```javascript
+basket.require(
+	{ url: 'require.js' },
+	{ url: 'require.config.js', skipCache: true },
+	{ url: 'libs.js' }
+);
+```
+
+Multiple scripts will be requested. `require.config.js` will not be cached in localStorage. Useful if order of scripts execution is important but storing certain script is not needed, e.g. it changes with each request.
+
 **Ordering dependencies**
 
 ```js
